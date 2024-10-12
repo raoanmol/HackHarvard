@@ -1,212 +1,23 @@
-[
-    {
-        "place_id": 283498017,
-        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-        "osm_type": "relation",
-        "osm_id": 12560950,
-        "lat": "42.7051669",
-        "lon": "-7.1013033",
-        "class": "boundary",
-        "type": "administrative",
-        "place_rank": 18,
-        "importance": 0.3810167259253667,
-        "addresstype": "civil_parish",
-        "name": "Hospital",
-        "display_name": "Hospital, Pedrafita do Cebreiro, Os Ancares, Lugo, Galicia, España",
-        "boundingbox": [
-            "42.6879715",
-            "42.7225754",
-            "-7.1126912",
-            "-7.0821675"
-        ]
-    },
-    {
-        "place_id": 268143323,
-        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-        "osm_type": "way",
-        "osm_id": 26794119,
-        "lat": "56.463596550000005",
-        "lon": "-3.038003161321857",
-        "class": "amenity",
-        "type": "hospital",
-        "place_rank": 30,
-        "importance": 0.3410509297273993,
-        "addresstype": "amenity",
-        "name": "Ninewells Hospital",
-        "display_name": "Ninewells Hospital, Ninewells Avenue, Menzieshill, Dundee, Dundee City, Alba / Scotland, DD2 1XQ, United Kingdom",
-        "boundingbox": [
-            "56.4613353",
-            "56.4660317",
-            "-3.0440103",
-            "-3.0305380"
-        ]
-    },
-    {
-        "place_id": 298977226,
-        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-        "osm_type": "relation",
-        "osm_id": 4067760,
-        "lat": "9.9333376",
-        "lon": "-84.0841316",
-        "class": "boundary",
-        "type": "administrative",
-        "place_rank": 16,
-        "importance": 0.3359701931684104,
-        "addresstype": "village",
-        "name": "Hospital",
-        "display_name": "Hospital, Cantón de San José, San José, 10103, Costa Rica",
-        "boundingbox": [
-            "9.9172928",
-            "9.9359028",
-            "-84.0990232",
-            "-84.0790477"
-        ]
-    },
-    {
-        "place_id": 277797098,
-        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-        "osm_type": "relation",
-        "osm_id": 14608694,
-        "lat": "52.4721802",
-        "lon": "-8.4306773",
-        "class": "place",
-        "type": "village",
-        "place_rank": 19,
-        "importance": 0.303230229325644,
-        "addresstype": "village",
-        "name": "Hospital",
-        "display_name": "Hospital, The Municipal District of Cappamore — Kilmallock, County Limerick, Munster, Éire / Ireland",
-        "boundingbox": [
-            "52.4630149",
-            "52.4813945",
-            "-8.4364129",
-            "-8.4225611"
-        ]
-    },
-    {
-        "place_id": 47618527,
-        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-        "osm_type": "relation",
-        "osm_id": 16206542,
-        "lat": "-34.6538724",
-        "lon": "-59.4351063",
-        "class": "boundary",
-        "type": "administrative",
-        "place_rank": 18,
-        "importance": 0.30000999999999994,
-        "addresstype": "suburb",
-        "name": "Hospital",
-        "display_name": "Hospital, Mercedes, Partido de Mercedes, Buenos Aires, Argentina",
-        "boundingbox": [
-            "-34.6564529",
-            "-34.6515235",
-            "-59.4378848",
-            "-59.4323419"
-        ]
-    },
-    {
-        "place_id": 49069976,
-        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-        "osm_type": "relation",
-        "osm_id": 15079133,
-        "lat": "-36.7807947",
-        "lon": "-59.0868302",
-        "class": "boundary",
-        "type": "administrative",
-        "place_rank": 18,
-        "importance": 0.30000999999999994,
-        "addresstype": "neighbourhood",
-        "name": "Hospital",
-        "display_name": "Hospital, Rauch, Partido de Rauch, Buenos Aires, Argentina",
-        "boundingbox": [
-            "-36.7834625",
-            "-36.7786675",
-            "-59.0902362",
-            "-59.0831048"
-        ]
-    },
-    {
-        "place_id": 47213974,
-        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-        "osm_type": "relation",
-        "osm_id": 4871538,
-        "lat": "-32.422256000000004",
-        "lon": "-63.72988313917034",
-        "class": "boundary",
-        "type": "administrative",
-        "place_rank": 18,
-        "importance": 0.30000999999999994,
-        "addresstype": "neighbourhood",
-        "name": "Hospital",
-        "display_name": "Hospital, Hernando, Municipio de Hernando, Pedanía Punta del Agua, Departamento Tercero Arriba, Córdoba, X5980, Argentina",
-        "boundingbox": [
-            "-32.4247644",
-            "-32.4196109",
-            "-63.7330628",
-            "-63.7268915"
-        ]
-    },
-    {
-        "place_id": 268227635,
-        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-        "osm_type": "way",
-        "osm_id": 569141801,
-        "lat": "56.462505300000004",
-        "lon": "-3.0146273778005974",
-        "class": "amenity",
-        "type": "hospital",
-        "place_rank": 30,
-        "importance": 0.2936886391571847,
-        "addresstype": "amenity",
-        "name": "Royal Victoria Hospital",
-        "display_name": "Royal Victoria Hospital, Jedburgh Road, Balgay, Dundee, Dundee City, Alba / Scotland, DD2 1SP, United Kingdom",
-        "boundingbox": [
-            "56.4614304",
-            "56.4636259",
-            "-3.0175243",
-            "-3.0119219"
-        ]
-    },
-    {
-        "place_id": 68922176,
-        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-        "osm_type": "node",
-        "osm_id": 10047288631,
-        "lat": "0.5676505",
-        "lon": "31.3936029",
-        "class": "place",
-        "type": "village",
-        "place_rank": 19,
-        "importance": 0.27501,
-        "addresstype": "village",
-        "name": "Hospital",
-        "display_name": "Hospital, Mubende, Central Region, Uganda",
-        "boundingbox": [
-            "0.5476505",
-            "0.5876505",
-            "31.3736029",
-            "31.4136029"
-        ]
-    },
-    {
-        "place_id": 64826389,
-        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
-        "osm_type": "node",
-        "osm_id": 9492294974,
-        "lat": "-0.3444339",
-        "lon": "31.7574437",
-        "class": "place",
-        "type": "village",
-        "place_rank": 19,
-        "importance": 0.27501,
-        "addresstype": "village",
-        "name": "Hospital",
-        "display_name": "Hospital, Masaka City, Central Region, Uganda",
-        "boundingbox": [
-            "-0.3644339",
-            "-0.3244339",
-            "31.7374437",
-            "31.7774437"
-        ]
-    }
+[('42.7051669', '-7.1013033', 'Hospital, Pedrafita do Cebreiro, Os Ancares, Lugo, Galicia, España',
+    ['42.6879715', '42.7225754', '-7.1126912', '-7.0821675'
+    ]), ('56.463596550000005', '-3.038003161321857', 'Ninewells Hospital, Ninewells Avenue, Menzieshill, Dundee, Dundee City, Alba / Scotland, DD2 1XQ, United Kingdom',
+    ['56.4613353', '56.4660317', '-3.0440103', '-3.0305380'
+    ]), ('9.9333376', '-84.0841316', 'Hospital, Cantón de San José, San José,
+    10103, Costa Rica',
+    ['9.9172928', '9.9359028', '-84.0990232', '-84.0790477'
+    ]), ('52.4721802', '-8.4306773', 'Hospital, The Municipal District of Cappamore — Kilmallock, County Limerick, Munster, Éire / Ireland',
+    ['52.4630149', '52.4813945', '-8.4364129', '-8.4225611'
+    ]), ('-34.6538724', '-59.4351063', 'Hospital, Mercedes, Partido de Mercedes, Buenos Aires, Argentina',
+    ['-34.6564529', '-34.6515235', '-59.4378848', '-59.4323419'
+    ]), ('-36.7807947', '-59.0868302', 'Hospital, Rauch, Partido de Rauch, Buenos Aires, Argentina',
+    ['-36.7834625', '-36.7786675', '-59.0902362', '-59.0831048'
+    ]), ('-32.422256000000004', '-63.72988313917034', 'Hospital, Hernando, Municipio de Hernando, Pedanía Punta del Agua, Departamento Tercero Arriba, Córdoba, X5980, Argentina',
+    ['-32.4247644', '-32.4196109', '-63.7330628', '-63.7268915'
+    ]), ('56.462505300000004', '-3.0146273778005974', 'Royal Victoria Hospital, Jedburgh Road, Balgay, Dundee, Dundee City, Alba / Scotland, DD2 1SP, United Kingdom',
+    ['56.4614304', '56.4636259', '-3.0175243', '-3.0119219'
+    ]), ('0.5676505', '31.3936029', 'Hospital, Mubende, Central Region, Uganda',
+    ['0.5476505', '0.5876505', '31.3736029', '31.4136029'
+    ]), ('-0.3444339', '31.7574437', 'Hospital, Masaka City, Central Region, Uganda',
+    ['-0.3644339', '-0.3244339', '31.7374437', '31.7774437'
+    ])
 ]

@@ -1,7 +1,6 @@
 from flask import Blueprint, jsonify
 import subprocess
 import json
-import math
 
 health_stations_bp = Blueprint('health_stations', __name__)
 

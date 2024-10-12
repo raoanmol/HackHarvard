@@ -2,39 +2,81 @@ from rapidfuzz import fuzz
 import subprocess
 import json
 import math
-from flask import Blueprint
+from flask import Blueprint, jsonify
 
 health_stations_bp = Blueprint('health_stations', __name__)
 
-GOOGLE_API_KEY = "AIzaSyCjIhGHifYkVaMqqIQSdAn5ywqvk52u6HY"
+GOOGLE_API_KEY = ""
 
-@health_stations_bp.route('/get/<float:lat>/<float:lon>/<float:radius>', methods=['GET'])
+@health_stations_bp.route('/get/<lat>/<lon>/<radius>', methods=['GET'])
 def get_health_stations(lat, lon, radius):
-    hospitals = get_health_stations("hospital", lat, lon, radius)
+    lat = float(lat)
+    lon = float(lon)
+    radius = float(radius)
+
+    response = {}
+
+    hospitals = station_locations("hospital", lat, lon, radius)
+    hospital_data = []
     for item in hospitals:
-        print(is_open(item[2], item[0], item[1]))
-    print("Hospitals:", hospitals)
+        if is_open(item[2], item[0], item[1]):
+            hospital_data.append({
+                'name': item[2],
+                'latitude': item[0],
+                'longitude': item[1],
+                'distance': item[3]
+            })
+    response['hospitals'] = hospital_data
 
-
-    clinics = get_health_stations("clinic", lat, lon, radius)
+    clinics = station_locations("clinic", lat, lon, radius)
+    clinic_data = []
     for item in clinics:
-        print(is_open(item[2], item[0], item[1]))
-    print("Clinics:", clinics)
+        if is_open(item[2], item[0], item[1]):
+            clinic_data.append({
+                'name': item[2],
+                'latitude': item[0],
+                'longitude': item[1],
+                'distance': item[3]
+            })
+    response['clinics'] = clinic_data
 
-    pharmacy = get_health_stations("pharmacy", lat, lon, radius)
-    for item in pharmacy:
-        print(is_open(item[2], item[0], item[1]))
-    print("Pharmacies:", pharmacy)
+    pharmacies = station_locations("pharmacy", lat, lon, radius)
+    pharmacy_data = []
+    for item in pharmacies:
+        if is_open(item[2], item[0], item[1]):
+            pharmacy_data.append({
+                'name': item[2],
+                'latitude': item[0],
+                'longitude': item[1],
+                'distance': item[3]
+            })
+    response['pharmacies'] = pharmacy_data
 
-    doctors = get_health_stations("doctors", lat, lon, radius)
+    doctors = station_locations("doctors", lat, lon, radius)
+    doctor_data = []
     for item in doctors:
-        print(is_open(item[2], item[0], item[1]))
-    print("Doctors:", doctors)
+        if is_open(item[2], item[0], item[1]):
+            doctor_data.append({
+                'name': item[2],
+                'latitude': item[0],
+                'longitude': item[1],
+                'distance': item[3]
+            })
+    response['doctors'] = doctor_data
 
-    health_posts = get_health_stations("health_post", lat, lon, radius)
+    health_posts = station_locations("health_post", lat, lon, radius)
+    health_post_data = []
     for item in health_posts:
-        print(is_open(item[2], item[0], item[1]))
-    print("Health Posts:", health_posts)
+        if is_open(item[2], item[0], item[1]):
+            health_post_data.append({
+                'name': item[2],
+                'latitude': item[0],
+                'longitude': item[1],
+                'distance': item[3]
+            })
+    response['health_posts'] = health_post_data
+
+    return jsonify(response)
 
 def station_locations(query, lat, lon, radius):
     curl_command = f'curl "https://nominatim.openstreetmap.org/search?format=json&q={query}&lat={lat}&lon={lon}&radius={radius}"'
@@ -55,14 +97,6 @@ def station_locations(query, lat, lon, radius):
         return health_stations
     else:
         return []
-    
-def haversine(lat1, lon1, lat2, lon2):
-    R = 6371
-    dlat = math.radians(lat2 - lat1)
-    dlon = math.radians(lon2 - lon1)
-    a = (math.sin(dlat / 2) ** 2) + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * (math.sin(dlon / 2) ** 2)
-    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
-    return R * c
     
 def is_open(osm_name, lat, lon):
     curl_command = f'curl "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={lat},{lon}&radius=5000&type=hospital&key={GOOGLE_API_KEY}&fields=name,geometry,opening_hours"'
@@ -94,32 +128,15 @@ def name_matching(google_name, osm_name):
 
     return similarity_score
 
+def haversine(lat1, lon1, lat2, lon2):
+    R = 6371
+    dlat = math.radians(lat2 - lat1)
+    dlon = math.radians(lon2 - lon1)
+    a = (math.sin(dlat / 2) ** 2) + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * (math.sin(dlon / 2) ** 2)
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+    return R * c
+
 # # Usage
 # latitude = 28.391988
 # longitude = -80.928436
-
-# hospitals = get_health_stations("hospital", latitude, longitude)
-# for item in hospitals:
-#     print(is_open(item[2], item[0], item[1]))
-# print("Hospitals:", hospitals)
-
-
-# clinics = get_health_stations("clinic", latitude, longitude)
-# for item in clinics:
-#     print(is_open(item[2], item[0], item[1]))
-# print("Clinics:", clinics)
-
-# pharmacy = get_health_stations("pharmacy", latitude, longitude)
-# for item in pharmacy:
-#     print(is_open(item[2], item[0], item[1]))
-# print("Pharmacies:", pharmacy)
-
-# doctors = get_health_stations("doctors", latitude, longitude)
-# for item in doctors:
-#     print(is_open(item[2], item[0], item[1]))
-# print("Doctors:", doctors)
-
-# health_posts = get_health_stations("health_post", latitude, longitude)
-# for item in health_posts:
-#     print(is_open(item[2], item[0], item[1]))
-# print("Health Posts:", health_posts)
+# get_health_stations(latitude, longitude, 1000)

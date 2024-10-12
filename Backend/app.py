@@ -3,8 +3,10 @@ from endpoints.health_stations import health_stations_bp
 from endpoints.hurricane_path import hurricane_path_bp
 from endpoints.fema_drc import fema_drc_bp
 from endpoints.emergency_shelters import emergency_shelters_bp
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Register blueprints for each module
 app.register_blueprint(health_stations_bp, url_prefix='/health_stations')

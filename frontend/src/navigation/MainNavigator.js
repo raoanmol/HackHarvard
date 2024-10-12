@@ -1,14 +1,10 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { NavigationContainer } from "@react-navigation/native";
 import HomeScreen from "../components/HomeScreen";
 import GetHelpScreen from "../components/GetHelpScreen";
-import { Ionicons } from "@expo/vector-icons";
+import { NavigationContainer } from "@react-navigation/native";
+import { Ionicons } from "@expo/vector-icons"; // Icon for tab navigation
 
-/**
- * MainNavigator Component
- * Handles tab navigation between Home and Get Help.
- */
 const Tab = createBottomTabNavigator();
 
 const MainNavigator = () => {
@@ -18,18 +14,18 @@ const MainNavigator = () => {
         screenOptions={({ route }) => ({
           tabBarIcon: ({ color, size }) => {
             let iconName;
+
             if (route.name === "Home") {
-              iconName = "home"; // Icon for Home tab
+              iconName = "home";
             } else if (route.name === "Get Help") {
-              iconName = "alert-circle"; // Icon for Get Help tab (Warning sign)
+              iconName = "medkit";
             }
+
             return <Ionicons name={iconName} size={size} color={color} />;
           },
+          tabBarActiveTintColor: "#007AFF",
+          tabBarInactiveTintColor: "gray",
         })}
-        tabBarOptions={{
-          activeTintColor: "tomato",
-          inactiveTintColor: "gray",
-        }}
       >
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Get Help" component={GetHelpScreen} />

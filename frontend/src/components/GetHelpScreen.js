@@ -118,7 +118,7 @@ const GetHelpScreen = () => {
       setLoading(false);
     }
 
-    // Make the same API call to DEFANG and ignore the response
+    // Make the API call to DEFANG
     try {
       await fetchWithTimeout(
         endpoint.replace(API_BASE_URL, DEFANG_BASE_URL),
@@ -126,7 +126,7 @@ const GetHelpScreen = () => {
         5000
       );
     } catch (error) {
-      console.log("DEFANG request error (ignored):", error);
+      console.log("DEFANG request error:", error);
     }
   };
 

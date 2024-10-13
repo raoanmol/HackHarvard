@@ -1,4 +1,4 @@
-# Disaster Response API Project
+# CrisisCompanion
 
 ## Description
 This project provides a set of Flask-based APIs designed to assist in disaster response efforts. The APIs offer information on various emergency services, including:

@@ -1,36 +1,46 @@
 import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../components/HomeScreen";
-import GetHelpScreen from "../components/GetHelpScreen";
-import { NavigationContainer } from "@react-navigation/native";
-import { Ionicons } from "@expo/vector-icons"; // Icon for tab navigation
+import FirstAidGuide from "../components/FirstAidGuide";
 
-const Tab = createBottomTabNavigator();
+// Create a stack navigator
+const Stack = createStackNavigator();
 
 const MainNavigator = () => {
   return (
-    <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ color, size }) => {
-            let iconName;
-
-            if (route.name === "Home") {
-              iconName = "home";
-            } else if (route.name === "Get Help") {
-              iconName = "medkit";
-            }
-
-            return <Ionicons name={iconName} size={size} color={color} />;
-          },
-          tabBarActiveTintColor: "#007AFF",
-          tabBarInactiveTintColor: "gray",
-        })}
-      >
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Get Help" component={GetHelpScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <Stack.Navigator
+      screenOptions={{
+        // Apply global screen options for all screens in the stack
+        headerStyle: {
+          backgroundColor: "rgba(0, 0, 0, 0.5)", // Dark translucent background for the header
+        },
+        headerTintColor: "#fff", // Set header text color to white for better readability
+        headerTitleAlign: "center", // Center align the title in the header
+        headerTitleStyle: {
+          fontWeight: "bold", // Make the header title bold
+          fontSize: 24, // Set the font size of the header title
+        },
+      }}
+    >
+      {/* Define the HomeScreen route */}
+      <Stack.Screen
+        name="MainHome"
+        component={HomeScreen}
+        options={{
+          headerShown: false, // Hide the header for the HomeScreen
+        }}
+      />
+      {/* Define the FirstAidGuide route */}
+      <Stack.Screen
+        name="FirstAidGuide"
+        component={FirstAidGuide}
+        options={{
+          headerTitle: "Guide", // Set the title for the FirstAidGuide screen
+          headerBackTitle: "Home", // Customize the back button label to "Home"
+          headerShown: true, // Show the header for the FirstAidGuide screen
+        }}
+      />
+    </Stack.Navigator>
   );
 };
 

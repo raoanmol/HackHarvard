@@ -1,102 +1,68 @@
 # CrisisCompanion
 
 ## Description
-This project provides a set of Flask-based APIs designed to assist in disaster response efforts. The APIs offer information on various emergency services, including:
+React-native based mobile app to assist in natural disasteer situations with a Flask backend running on Defang.
 
-- Food distribution sites
-- Health stations
-- Disaster Recovery Centers (DRCs)
-- Emergency shelters
-- Weather alerts related to hurricanes
+## Functionalities
+- Track Food Distribution Sites
+- Track Health stations
+- Track Disaster Recovery Centers (DRCs)
+- Track Emergency Shelters
+- Weather alerts and news articles
+- First Aid and Emergency information
 
-## Requirements
+## Setup
 To run this project, you need to have the following installed:
-
 - Python 3.6 or higher
-- Flask
-- Requests
 
-### Install Required Packages
-You can install the required Python packages using the provided `requirements.txt` file.
-
-Create a `requirements.txt` file with the following content:
-
+Start off by cloning the repo:
+```bash
+git clone https://github.com/raoanmol/HackHarvard.git
 ```
-Flask==2.0.3
-requests==2.26.0
+### Host Backend Locally
+*Optional: Setup a virtualenv*
+```bash
+pip install virtualenv
+cd #path-to-project -> Backend
+python3 -m venv venv
+```
+*Go to your project directory and run the following based on your environment*
+
+*On Windows:*
+```shell
+# on command prompt
+venv\Scripts\activate
+# on 
+.\venv\Scripts\activate
 ```
 
-Then, install the dependencies using pip:
+*On Unix based terminals:*
+```bash
+source venv/bin/activate
+```
 
+
+Install the required packages from the `requirements.txt`:
 ```bash
 pip install -r requirements.txt
 ```
 
-## API Features
+Enter your API keys in the variables *(.env files cming soon.... trust)*
 
-### 1. Food Distribution API
-#### Endpoint: `/food_distribution`
-This API retrieves information about food distribution sites.
-
-### 2. Health Stations API
-#### Endpoint: `/health_stations/get/<lat>/<lon>/<radius_meters>`
-- **Parameters:**
-    - `lat`: Latitude of the location.
-    - `lon`: Longitude of the location.
-    - `radius_meters`: Search radius in meters.
-
-This API fetches nearby health stations, including hospitals, clinics, and pharmacies.
-
-### 3. Disaster Recovery Centers (DRC) API
-#### Endpoint: `/fema_drc/within_radius/<lat>/<lon>/<radius>`
-- **Parameters:**
-    - `lat`: Latitude of the location.
-    - `lon`: Longitude of the location.
-    - `radius`: Search radius in kilometers.
-
-This API retrieves DRCs within a specified radius from the given coordinates.
-
-### 4. Emergency Shelters API
-#### Endpoint: `/emergency_shelters/get/<lat>/<lon>/<radius_meters>`
-- **Parameters:**
-    - `lat`: Latitude of the location.
-    - `lon`: Longitude of the location.
-    - `radius_meters`: Search radius in meters.
-
-This API retrieves emergency shelters within the specified radius.
-
-### 5. Hurricane Weather Alerts API
-#### Endpoint: `/get/<string:lat>/<string:lon>`
-- **Parameters:**
-    - `lat`: Latitude of the location.
-    - `lon`: Longitude of the location.
-
-This API fetches active weather alerts related to hurricanes, with optional filters for event types and date ranges.
-
-## Usage
-1. Clone the repository or download the script files.
-2. Ensure you have Flask and Requests installed. If not, run the following command:
-
+Run the backend:
 ```bash
-pip install Flask requests
+python3 app.py
 ```
-
-3. Create a Python file named `app.py` and add the provided Flask code for each feature.
-4. Replace the placeholders (like `GOOGLE_API_KEY`) with your actual API keys as needed.
-5. Run the Flask app:
-
-```bash
-export FLASK_APP=app.py
-flask run
-```
-
-6. The APIs will be accessible at `http://127.0.0.1:5000/`
+Voila!
 
 ## Notes
-- Ensure the latitude and longitude values are valid.
-- The radius value determines how far from the specified location the API will search for services.
-- The application utilizes the Google Places API for health stations and emergency shelters, and you must have an active API key with Places API enabled.
-- The Hurricane Weather Alerts API fetches data from the National Weather Service and may be subject to rate limits.
+For the purpose of this hackathon, there are a few caveats:
+- Since the app tracks your current location and there's no natural disaster in Boston right now *(fortunately)*, we're setting the current location to somewhere in **Florida**.
+- Since supply drops can vary and there is no single API (that we know of) that keeps track of them, we are web scraping them and have currently cached Florida for a faster demo.
+- Our current implementation of the Backend deployment of Defang isn't super fast so we are using Linode as a backup server to reduce wait times.
+- This app doesn't have the Android SDK yet (internet was a little too slow to download and set that up) so that support will be added post-hackathon.
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. Feel free to read the `LICENSE` for all the specifics.
+
+Feel free to read `DOCS.md` for further information on the endpoints

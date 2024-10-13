@@ -100,7 +100,3 @@ flask run
 
 ## License
 This project is licensed under the MIT License.
-
----
-
-Feel free to customize any part of this README to better fit your project or add additional details as necessary!

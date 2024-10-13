@@ -65,4 +65,4 @@ For the purpose of this hackathon, there are a few caveats:
 ## License
 This project is licensed under the MIT License. Feel free to read the `LICENSE` for all the specifics.
 
-Feel free to read `DOCS.md` for further information on the endpoints
+Feel free to read `DOCS.md` for more information on the endpoints
